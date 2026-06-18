@@ -24,7 +24,12 @@ app.get("/api/enquiries", getEnquiries);
 
 // Basic health check route
 app.get("/health", (req, res) => {
-  res.status(200).json({ status: "ok" });
+  res.json({ status: "UP" });
+});
+
+// Root route
+app.get("/", (req, res) => {
+  res.send("server is running good to go!!!!");
 });
 
 app.listen(PORT, () => {

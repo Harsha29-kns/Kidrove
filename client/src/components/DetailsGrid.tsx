@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { Calendar, Clock, MonitorPlay, Users, IndianRupee } from 'lucide-react';
 
 const details = [
@@ -9,7 +9,7 @@ const details = [
   { icon: Calendar, label: 'Start Date', value: '15 July 2026', color: 'text-red-500', bg: 'bg-red-100' },
 ];
 
-const containerVariants = {
+const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
@@ -17,7 +17,7 @@ const containerVariants = {
   }
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { opacity: 0, scale: 0.5, rotate: -10 },
   visible: { 
     opacity: 1, 
