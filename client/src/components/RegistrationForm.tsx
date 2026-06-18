@@ -25,7 +25,9 @@ const RegistrationForm = () => {
   const onSubmit = async (data: FormData) => {
     setIsSubmitting(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/enquiry', data);
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+      const response = await axios.post(`${apiUrl}/enquiry`, data);
+      
       if (response.data.success) {
         toast.success("Successfully registered! We will contact you soon.");
         reset();

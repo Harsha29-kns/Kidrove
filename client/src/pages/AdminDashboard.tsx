@@ -19,7 +19,8 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchEnquiries = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/enquiries');
+        const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+        const response = await axios.get(`${apiUrl}/enquiries`);
         if (response.data.success) {
           setEnquiries(response.data.data);
         }
